@@ -1,0 +1,11 @@
+{% for tag in site.tags %}
+  {% if include.tag != tag[0] %}
+    {% continue %}
+  {% endif %}
+
+  <ul>
+    {% for post in tag[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
